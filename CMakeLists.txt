@@ -17,11 +17,10 @@ target_include_directories(OpenNL_psm
   ${CMAKE_CURRENT_SOURCE_DIR}
 )
 
-if (${BUILD_SHARED_LIBS})
-    target_compile_definitions(OpenNL_psm PRIVATE geogram_EXPORTS) 
-else()
-    target_compile_definitions(OpenNL_psm PRIVATE GEO_STATIC_LIBS) 
-endif()
+if (BUILD_SHARED_LIBS)
+	add_definitions(-DGEO_DYNAMIC_LIBS)
+endif ()
+
 message("shared libraries: ${BUILD_SHARED_LIBS}" )
 
 if(OpenMP_CXX_FOUND)
