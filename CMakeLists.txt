@@ -6,6 +6,11 @@ if (BUILD_SHARED_LIBS)
 endif ()
 
 add_library(OpenNL_psm OpenNL_psm/OpenNL_psm.c OpenNL_psm/OpenNL_psm.h)
+target_include_directories(OpenNL_psm
+  PUBLIC
+  ${CMAKE_CURRENT_SOURCE_DIR}
+)
+
 target_link_libraries(OpenNL_psm ${CMAKE_DL_LIBS})
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
