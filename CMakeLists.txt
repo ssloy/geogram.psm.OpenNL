@@ -5,7 +5,7 @@ if (BUILD_SHARED_LIBS)
 	add_definitions(-DGEO_DYNAMIC_LIBS)
 endif ()
 
-add_library(OpenNL_psm OpenNL_psm.c)
+add_library(OpenNL_psm OpenNL_psm/OpenNL_psm.c OpenNL_psm/OpenNL_psm.h)
 target_link_libraries(OpenNL_psm ${CMAKE_DL_LIBS})
 find_package(OpenMP)
 if(OpenMP_CXX_FOUND)
