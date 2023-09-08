@@ -3,6 +3,8 @@ project (OpenNL_psm LANGUAGES C CXX)
 
 if (BUILD_SHARED_LIBS)
 	add_definitions(-DGEO_DYNAMIC_LIBS)
+else()
+    add_definitions(-DGEO_STATIC_LIBS)
 endif ()
 
 add_library(OpenNL_psm OpenNL_psm/OpenNL_psm.c OpenNL_psm/OpenNL_psm.h)
